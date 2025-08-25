@@ -107,10 +107,10 @@ portifolio/
 ## 📧 Contato
 
 - **E-mail**: dossantoslucasdev@gmail.com
-- **LinkedIn**: [Seu Perfil](https://linkedin.com/in/seu-perfil)
-- **GitHub**: [Seu Usuário](https://github.com/seu-usuario)
-- **Instagram**: [Seu Perfil](https://instagram.com/seu-perfil)
-- **YouTube**: [Seu Canal](https://youtube.com/@seu-canal)
+- **LinkedIn**: [https://www.linkedin.com/in/dossantoslucas-rsv/](https://www.linkedin.com/in/dossantoslucas-rsv/)
+- **GitHub**: [https://github.com/@dossantoslucasdev](https://github.com/@dossantoslucasdev)
+- **Instagram**: [https://instagram.com/@dossantoslucasdev](https://instagram.com/@dossantoslucasdev)
+- **YouTube**: [https://www.youtube.com/@dossantoslucasdev](https://www.youtube.com/@dossantoslucasdev)
 
 ## 📄 Licença
 
@@ -119,3 +119,4 @@ Este projeto é de uso pessoal e educacional.
 ---
 
 *Desenvolvido com ❤️ e muito ☕*
+
