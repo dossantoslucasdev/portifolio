@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio - Desenvolvedor de Tecnologia</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="#" class="logo">
+                <img src="logo.png" alt="Logo" class="logo-img">
+            </a>
+            <button class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#projetos">Projetos</a></li>
+                    <li><a href="#artigos">Artigos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Sobre Section -->
+        <section id="sobre" class="section">
+            <h2>Sobre Mim</h2>
+            <div class="about-content">
+                <!-- Left Side - Profile & Social -->
+                <div class="profile-social-side">
+                    <img src="profile.png" alt="Foto de Perfil" class="profile-img">
+                    
+                    <!-- Social Media Links -->
+                    <div class="social-media-row">
+                        <a href="#" class="social-link" title="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" title="LinkedIn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" title="GitHub">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" title="YouTube">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Side - Content -->
+                <div class="content-side">
+                    <h3>Desenvolvedor Full Stack</h3>
+                    <span>Olá!</span>
+                    <p>
+                        Sou apaixonado por transformar ideias em realidade através do desenvolvimento de softwares. Ao longo da minha trajetória, explorei desde soluções simples, como landing pages e sistemas web, até projetos mais robustos, como e-commerces, SaaS e integrações com APIs.
+                    </p>
+                    <p>
+                        Minha missão é criar aplicações funcionais, escaláveis e com design intuitivo, que não apenas resolvem problemas, mas também entregam experiências marcantes para quem as utiliza. Sempre em busca de aprendizado contínuo, gosto de unir tecnologia, criatividade e visão de negócio para gerar impacto real.
+                    </p>
+                    <h3>Habilidades</h3>
+                    <div class="skills-grid">
+                        <!-- Backend -->
+                        <div class="skill-category">
+                            <div class="skill-category-header">
+                                <a href="#" class="skill-category-icon" title="Backend">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                    </svg>
+                                </a>
+                                <h4>Backend</h4>
+                            </div>
+                            <div class="skill-items">
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">Django</span>
+                                <span class="skill-tag">Node.js</span>
+                                <span class="skill-tag">Java</span>
+                                <span class="skill-tag">TypeORM</span>
+                                <span class="skill-tag">REST API</span>
+                            </div>
+                        </div>
+
+                        <!-- Frontend -->
+                        <div class="skill-category">
+                            <div class="skill-category-header">
+                                <a href="#" class="skill-category-icon" title="Frontend">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                </a>
+                                <h4>Frontend</h4>
+                            </div>
+                            <div class="skill-items">
+                                <span class="skill-tag">React.js</span>
+                                <span class="skill-tag">React Native</span>
+                                <span class="skill-tag">Next.js</span>
+                                <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">TypeScript</span>
+                                <span class="skill-tag">Tailwind CSS</span>
+                                <span class="skill-tag">Styled Components</span>
+                            </div>
+                        </div>
+
+                        <!-- Web & Integração -->
+                        <div class="skill-category">
+                            <div class="skill-category-header">
+                                <a href="#" class="skill-category-icon" title="Web & Integração">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                                    </svg>
+                                </a>
+                                <h4>Web & Integração</h4>
+                            </div>
+                            <div class="skill-items">
+                                <span class="skill-tag">Stripe API</span>
+                                <span class="skill-tag">Firebase</span>
+                                <span class="skill-tag">Vercel</span>
+                                <span class="skill-tag">Shopify</span>
+                                <span class="skill-tag">Liquid</span>
+                            </div>
+                        </div>
+
+                        <!-- Banco de Dados -->
+                        <div class="skill-category">
+                            <div class="skill-category-header">
+                                <a href="#" class="skill-category-icon" title="Banco de Dados">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 6H4V4c0-1.1.9-2 2-2h12c1.1 0 2 .9 2 2v2zm0 4H4v8c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-8zM6 18c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1c0-.55-.45-1-1-1H7c-.55 0-1 .45-1 1v1zm0-5c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1c0-.55-.45-1-1-1H7c-.55 0-1 .45-1 1v1z"/>
+                                    </svg>
+                                </a>
+                                <h4>Banco de Dados</h4>
+                            </div>
+                            <div class="skill-items">
+                                <span class="skill-tag">PL/SQL</span>
+                                <span class="skill-tag">PostgreSQL</span>
+                                <span class="skill-tag">MySQL</span>
+                            </div>
+                        </div>
+
+                        <!-- Ferramentas -->
+                        <div class="skill-category">
+                            <div class="skill-category-header">
+                                <a href="#" class="skill-category-icon" title="Ferramentas">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/>
+                                    </svg>
+                                </a>
+                                <h4>Ferramentas</h4>
+                            </div>
+                            <div class="skill-items">
+                                <span class="skill-tag">Git</span>
+                                <span class="skill-tag">GitHub</span>
+                                <span class="skill-tag">VS Code</span>
+                                <span class="skill-tag">Vercel</span>
+                                <span class="skill-tag">Copilot</span>
+                                <span class="skill-tag">Notion</span>
+                            </div>
+                        </div>
+
+                        <!-- Outras Skills -->
+                        <div class="skill-category">
+                            <div class="skill-category-header">
+                                <a href="#" class="skill-category-icon" title="Outras Skills">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M13.49 5.48c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-3.6 13.9l1-4.4 2.1 2v6h2v-7.5l-2.1-2 .6-3c1.3 1.5 3.3 2.5 5.5 2.5v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1l-5.2 2.2v4.7h2v-3.4l1.8-.7-1.6 8.1-4.9-1-.4 2 7 1.4z"/>
+                                    </svg>
+                                </a>
+                                <h4>Outras Skills</h4>
+                            </div>
+                            <div class="skill-items">
+                                <span class="skill-tag">Lógica</span>
+                                <span class="skill-tag">Full Stack</span>
+                                <span class="skill-tag">Backend</span>
+                                <span class="skill-tag">Frontend</span>
+                                <span class="skill-tag">APIs RESTful</span>
+                                <span class="skill-tag">CMS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projetos Section -->
+        <section id="projetos" class="section">
+            <h2>Projetos</h2>
+            <div class="projects-grid" id="github-projects"></div>
+        </section>
+
+        <!-- Artigos Section -->
+        <section id="artigos" class="section">
+            <h2>Trabalho de Conclusão de Curso (TCC)</h2>
+            <div class="tcc-container">
+                <div class="tcc-info">
+                    <h3>
+                        DESENVOLVIMENTO DE UM APLICATIVO MOBILE
+                        PARA TROCAS DE PRODUTOS EM CONTRIBUIÇÃO NO
+                        CONSUMO COLABORATIVO.
+                    </h3>
+                    <p class="tcc-description">
+                        O consumo no sistema capitalista gera impactos ambientais, especialmente pelo aumento dos resíduos sólidos urbanos. O crescimento do e-commerce e o uso de dispositivos móveis intensificam esse problema ao estimular o consumo e a geração de lixo. Como alternativa, o consumo colaborativo propõe a economia compartilhada, baseada na troca e venda de produtos usados entre pessoas. Nesse contexto, este trabalho apresenta o desenvolvimento de um aplicativo híbrido em React Native, que permite anunciar e trocar bens não utilizados, incentivando práticas sustentáveis no comércio eletrônico.
+                    </p>
+                    <a href="tcc_app.pdf" target="_blank" class="tcc-download">
+                        <svg width="24" height="24" fill="currentColor" style="vertical-align:middle;margin-right:8px;">
+                            <path d="M6 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6H6zm7 1.5V9h5.5L13 3.5zM6 4h6v5a1 1 0 0 0 1 1h5v10a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zm6 10v-2h-2v2H8l4 4 4-4h-2z"/>
+                        </svg>
+                        Baixar/Visualizar TCC (PDF)
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <h3>Vamos Conectar!</h3>
+            <p>Interessado em colaborar em projetos ou apenas bater um papo sobre tecnologia? Entre em contato!</p>
+            
+            <div class="contact-section">
+                <div class="email-section">
+                    <h4>Envie um e-mail</h4>
+                    <p>dossantoslucasdev@gmail.com</p>
+                    <button class="email-button" onclick="openEmailClient()">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                        Enviar E-mail
+                    </button>
+                    <button class="copy-email-button" onclick="copyEmail()">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+                        </svg>
+                        Copiar E-mail
+                    </button>
+                </div>
+                
+                <div class="social-section">
+                    <h4>Redes Sociais</h4>
+                    <div class="social-links">
+                        <a href="https://linkedin.com/in/seu-perfil" target="_blank" title="LinkedIn" class="social-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="https://github.com/seu-usuario" target="_blank" title="GitHub" class="social-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                        <a href="https://instagram.com/seu-perfil" target="_blank" title="Instagram" class="social-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="https://youtube.com/@seu-canal" target="_blank" title="YouTube" class="social-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+                         <div class="footer-bottom">
+                 <p class="footer-text">&copy; 2024 Portfolio.dev - Todos os direitos reservados</p>
+                 <p class="footer-text">Desenvolvido com 
+                     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="footer-icon">
+                         <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                     </svg> 
+                     e muito 
+                     <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 256 256" role="img" aria-labelledby="title desc" class="footer-icon coffee-icon">
+                        <title id="title">Xícara de café minimalista</title>
+                        <desc id="desc">Desenho vetorial de uma xícara de café com pires e vapor.</desc>
+                      
+                                                 <style>
+                           :root {
+                             --line: #4299e1;      /* cor das linhas (azul) */
+                             --coffee: #3182ce;    /* cor do café (azul escuro) */
+                             --steam: rgba(66,153,225,.5);
+                           }
+                           .line { stroke: var(--line); fill: none; stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; }
+                           .steam { stroke: var(--steam); fill: none; stroke-width: 6; stroke-linecap: round; }
+                         </style>
+                      
+                        <!-- Pires -->
+                        <ellipse cx="128" cy="198" rx="90" ry="14" class="line" />
+                      
+                        <!-- Corpo da xícara (sem linha no topo) -->
+                        <path d="M64 112
+                                 v48
+                                 a16 16 0 0 0 16 16
+                                 h80
+                                 a16 16 0 0 0 16-16
+                                 v-48"
+                              class="line"/>
+                      
+                        <!-- Alça -->
+                        <path d="M176 124
+                                 h10
+                                 a22 22 0 0 1 0 44
+                                 h-10"
+                              class="line"/>
+                      
+                        <!-- Superfície do café -->
+                                                 <defs>
+                           <linearGradient id="coffeeGrad" x1="0" x2="0" y1="0" y2="1">
+                             <stop offset="0%" stop-color="#4299e1"/>
+                             <stop offset="100%" stop-color="var(--coffee)"/>
+                           </linearGradient>
+                         </defs>
+                        <ellipse cx="120" cy="112" rx="52" ry="12" fill="url(#coffeeGrad)"/>
+                      
+                        <!-- Vapor -->
+                        <path d="M98 64 C 92 52, 112 44, 104 32" class="steam"/>
+                        <path d="M120 64 C 114 52, 134 44, 126 32" class="steam"/>
+                        <path d="M142 64 C 136 52, 156 44, 148 32" class="steam"/>
+                      
+                        <!-- Base da xícara -->
+                        <path d="M88 176 h64" class="line"/>
+                      </svg>
+                      
+                 </p>
+             </div>
+        </div>
+    </footer>
+
+
+
+</body>
+</html> 
