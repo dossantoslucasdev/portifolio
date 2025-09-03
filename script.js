@@ -177,6 +177,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             projectsContainer.innerHTML = repos.map(repo => `
                 <div class="project-card">
+                    <img src="https://raw.githubusercontent.com/${githubUser}/${repo.name}/main/logo.png" alt="Imagem do Projeto do GitHub" class="project-image">
                     <h3 class="project-title">
                         <a href="${repo.url}" target="_blank">${repo.name}</a>
                     </h3>
