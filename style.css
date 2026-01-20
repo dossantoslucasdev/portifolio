@@ -1080,7 +1080,6 @@ footer::before {
     padding: 60px 20px;
     display: flex;
     justify-content: center;
-    /* background-color: #f4f7f6; /* Tom levemente diferente para destacar o topo */ */
 }
 
 .links-container {
