@@ -1140,7 +1140,11 @@ footer::before {
 }
 
 .link-card svg {
+    margin-right: 20px;
+    flex-shrink: 0;
+    /* Aplica a cor tanto em ícones de preenchimento quanto de linha */
     fill: currentColor;
+    stroke: currentColor;
 }
 
 /* Responsividade Mobile */
