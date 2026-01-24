@@ -137,62 +137,75 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Exibir repositórios "pinned" do GitHub na section projetos
+// Exibir repositórios do GitHub na section projetos
 document.addEventListener('DOMContentLoaded', function() {
-    // const githubUser = 'DevDosSantosLucas';
-    const githubUser = 'DevDosSantosLucasDev';
+    const githubUser = 'DosSantosLucasDev';
     const projectsContainer = document.getElementById('github-projects');
 
-    if (projectsContainer) {
-        // Usando a API GraphQL do GitHub para buscar os pinned repos
-        fetch('https://api.github.com/graphql', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                // 'Authorization': 'Bearer SEU_TOKEN_GITHUB', // Para mais de 60 req/hora, use um token
-            },
-            body: JSON.stringify({
-                query: `{
-                  user(login: "${githubUser}") {
-                    pinnedItems(first: 6, types: REPOSITORY) {
-                      nodes {
-                        ... on Repository {
-                          name
-                          description
-                          url
-                          primaryLanguage { name }
-                        }
-                      }
-                    }
-                  }
-                }`
-            })
+    if (!projectsContainer) {
+        console.warn('Elemento #github-projects não encontrado');
+        return;
+    }
+
+    console.log('Iniciando busca de repositórios do GitHub para:', githubUser);
+
+    // Buscar os repositórios públicos
+    fetch(`https://api.github.com/users/${githubUser}/repos?sort=updated&per_page=6`)
+        .then(res => {
+            if (!res.ok) {
+                throw new Error(`HTTP error! status: ${res.status}`);
+            }
+            return res.json();
         })
-        .then(res => res.json())
-        .then(data => {
-            const repos = data.data?.user?.pinnedItems?.nodes || [];
-            if (repos.length === 0) {
-                projectsContainer.innerHTML = '<p>Nenhum projeto fixado encontrado no GitHub.</p>';
+        .then(repos => {
+            console.log('Repositórios encontrados:', repos.length);
+            
+            if (!repos || repos.length === 0) {
+                projectsContainer.innerHTML = '<p>Nenhum repositório encontrado.</p>';
                 return;
             }
-            projectsContainer.innerHTML = repos.map(repo => `
-                <div class="project-card">
-                    <img src="https://raw.githubusercontent.com/${githubUser}/${repo.name}/main/logo.png" alt="Imagem do Projeto do GitHub" class="project-image">
-                    <h3 class="project-title">
-                        <a href="${repo.url}" target="_blank">${repo.name}</a>
-                    </h3>
-                    <p class="project-description">${repo.description || 'Sem descrição.'}</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">${repo.primaryLanguage?.name || 'N/A'}</span>
+
+            projectsContainer.innerHTML = repos.map((repo, index) => {
+                // Gerar cor consistente baseada no índice
+                const hue = (index * 60) % 360;
+                const bgColor = `hsl(${hue}, 70%, 50%)`;
+                
+                return `
+                    <div class="github-project-card">
+                        <div class="github-project-header">
+                           
+                            <div class="github-project-info">
+                                <h4 class="github-project-name">${repo.name}</h4>
+                                <p class="github-project-description">${repo.description || 'Sem descrição'}</p>
+                            </div>
+                        </div>
+                        <div class="github-project-meta">
+                            <div class="github-project-tech">
+                                ${repo.language ? `<span class="github-tech-tag">${repo.language}</span>` : ''}
+                                <span class="github-stars">⭐ ${repo.stargazers_count}</span>
+                            </div>
+                            <a href="${repo.html_url}" target="_blank" class="github-repo-button">
+                                Ver repositório
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                                </svg>
+                            </a>
+                        </div>
                     </div>
-                </div>
-            `).join('');
+                `;
+            }).join('');
+            
+            console.log('Repositórios carregados com sucesso!');
         })
         .catch(error => {
-            projectsContainer.innerHTML = '<p>Não foi possível carregar os projetos fixados do GitHub.</p>';
-            console.error(error);
+            console.error('Erro ao buscar repositórios:', error);
+            projectsContainer.innerHTML = `
+                <p style="grid-column: 1 / -1; text-align: center; color: #ff6b6b;">
+                    Não foi possível carregar os repositórios do GitHub. 
+                    <br>Erro: ${error.message}
+                </p>
+            `;
         });
-    }
 });
 
 // Função para copiar e-mail para a área de transferência
@@ -219,3 +232,5 @@ function copyEmail() {
         openEmailClient();
     });
 }
+
+

@@ -1110,10 +1110,12 @@ footer::before {
     margin-bottom: 40px;
 }
 
+/* Links Grid - Efeitos Aprimorados */
 .links-grid {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    perspective: 1000px;
 }
 
 .link-card {
@@ -1131,29 +1133,121 @@ footer::before {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     position: relative;
+    overflow: hidden;
+}
+
+/* Efeito de brilho ao passar o mouse */
+.link-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s ease;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.link-card:hover::before {
+    left: 100%;
+}
+
+/* Borda com gradiente ao passar o mouse */
+.link-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #4299e1, #00d4ff);
+    opacity: 0;
+    transition: opacity 1s ease;
+    z-index: -1;
+}
+
+.link-card:hover::after {
+    opacity: 0.5;
 }
 
 .link-card span {
     flex: 1;
     text-align: center;
+    transition: all 0.3s ease;
 }
 
 .link-card:hover {
     background-color: #4299e1;
     color: #ffffff;
-    transform: scale(1.03);
-    box-shadow: 0 10px 20px rgba(66, 153, 225, 0.2);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 
+        0 10px 25px rgba(66, 153, 225, 0.3),
+        0 0 20px rgba(0, 212, 255, 0.2);
+}
+
+.link-card:hover span {
+    letter-spacing: 0.5px;
 }
 
 .link-card svg {
+    width: 20px;
+    height: 20px;
     margin-right: 20px;
     flex-shrink: 0;
-    /* Aplica a cor tanto em ícones de preenchimento quanto de linha */
     fill: currentColor;
     stroke: currentColor;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    filter: drop-shadow(0 0 0 transparent);
 }
 
-/* Responsividade Mobile */
+.link-card:hover svg {
+    transform: scale(1.2) rotate(-5deg);
+    filter: drop-shadow(0 0 8px rgba(66, 153, 225, 0.5));
+}
+
+/* Efeito de ondulação ao clicar */
+.link-card:active {
+    transform: translateY(-2px) scale(0.98);
+}
+
+/* Animação de entrada para cada card */
+.links-grid .link-card {
+    animation: slideInUpLinks 0.6s ease-out backwards;
+}
+
+.links-grid .link-card:nth-child(1) { animation-delay: 0.1s; }
+.links-grid .link-card:nth-child(2) { animation-delay: 0.2s; }
+.links-grid .link-card:nth-child(3) { animation-delay: 0.3s; }
+.links-grid .link-card:nth-child(4) { animation-delay: 0.4s; }
+.links-grid .link-card:nth-child(5) { animation-delay: 0.5s; }
+.links-grid .link-card:nth-child(6) { animation-delay: 0.6s; }
+.links-grid .link-card:nth-child(7) { animation-delay: 0.7s; }
+
+@keyframes slideInUpLinks {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Efeito adicional: Glow ao passar o mouse */
+.link-card {
+    background: #ffffff;
+    background-clip: padding-box;
+}
+
+.link-card:hover {
+    background: linear-gradient(135deg, #4299e1, #5aa3e8);
+}
+
+/* Responsividade */
 @media (max-width: 480px) {
     .section-links {
         padding: 40px 15px;
@@ -1162,5 +1256,217 @@ footer::before {
         width: 90px;
         height: 90px;
     }
+
+    .link-card {
+        padding: 16px;
+        gap: 12px;
+    }
+
+    .link-card svg {
+        width: 18px;
+        height: 18px;
+        margin-right: 15px;
+    }
+
+    .link-card span {
+        font-size: 0.95rem;
+    }
 }
 
+/* GitHub Projects Section */
+.github-projects-section {
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 2px solid var(--border-glow);
+}
+
+.github-projects-section h3 {
+    font-size: 1.8rem;
+    color: var(--accent);
+    margin-bottom: 2rem;
+    text-align: left;
+    text-shadow: 0 0 15px var(--accent);
+}
+
+.github-projects-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.github-project-card {
+    background: rgba(66, 153, 225, 0.05);
+    border: 1px solid var(--border-glow);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.github-project-card:hover {
+    border-color: var(--accent);
+    background: rgba(66, 153, 225, 0.1);
+    box-shadow: 0 0 30px var(--shadow-glow);
+    transform: translateY(-2px);
+}
+
+.github-project-header {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.github-project-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.github-project-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.github-project-name {
+    font-size: 1.3rem;
+    color: var(--primary);
+    margin: 0 0 0.5rem 0;
+    word-break: break-word;
+    text-shadow: 0 0 10px var(--shadow-glow);
+}
+
+.github-project-description {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.github-project-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.github-project-tech {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.github-tech-tag {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    border: 1px solid var(--primary);
+    box-shadow: 0 0 8px var(--shadow-glow);
+}
+
+.github-stars {
+    color: var(--accent);
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-shadow: 0 0 10px var(--shadow-glow);
+}
+
+.github-repo-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    border: 1px solid var(--primary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s;
+    box-shadow: 0 0 15px var(--shadow-glow);
+}
+
+.github-repo-button:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 25px var(--accent);
+    transform: translateY(-2px);
+}
+
+.github-repo-button svg {
+    transition: transform 0.3s;
+}
+
+.github-repo-button:hover svg {
+    transform: translate(2px, -2px);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .github-project-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .github-project-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 1.8rem;
+    }
+
+    .github-project-meta {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .github-project-tech {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .github-project-card {
+        padding: 1rem;
+    }
+
+    .github-project-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+
+    .github-project-name {
+        font-size: 1.1rem;
+    }
+
+    .github-repo-button {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* Remover o CSS antigo dos GitHub projects */
+#github-projects {
+    display: grid;
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem;
+}
+
+#github-projects .project-card-link {
+    margin: 0 auto;
+}
