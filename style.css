@@ -1119,7 +1119,7 @@ footer::before {
 .link-card {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 15px;
     padding: 18px;
     background: #ffffff;
@@ -1130,6 +1130,12 @@ footer::before {
     font-weight: 600;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: relative;
+}
+
+.link-card span {
+    flex: 1;
+    text-align: center;
 }
 
 .link-card:hover {
