@@ -1,0 +1,143 @@
+/* motorista.css
+ * Arquivo específico para a página /motorista
+ * Herda variáveis e animações do style.css global.
+ */
+
+/* * 1. CONFIGURAÇÃO DO PARALLAX WRAPPER
+ * Habilita a perspectiva 3D necessária para o efeito.
+ */
+.parallax-wrapper {
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 1px; /* Cria o espaço 3D */
+    scroll-behavior: smooth;
+}
+
+/* Define as camadas básica e de fundo */
+.parallax-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.parallax-layer.base {
+    transform: translateZ(0); /* Camada que sobe (Bio) */
+    z-index: 10;
+}
+
+.parallax-layer.back {
+    transform: translateZ(-1px) scale(2.1); /* Camada que fica parada (Imagem) */
+    z-index: 1;
+}
+
+/* * 2. BANNER HERO (A imagem parada)
+ * Encosta no topo e fica atrás do header.
+ */
+.driver-hero {
+    height: 80vh; /* Altura do banner no desktop */
+    position: relative;
+    overflow: hidden;
+    background-color: var(--darker-bg);
+}
+
+.hero-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* Substitua pelo caminho correto da sua imagem */
+    background-image: url('../banner-carro.png'); 
+    background-position:  center; /* Mantém você e o volante visíveis */
+    background-size: contain;
+    background-repeat: no-repeat;
+    filter: brightness(0.65) contrast(1.1); /* Toque cyberpunk */
+}
+
+/* Sobreposição gradiente cyberpunk para integrar a imagem ao fundo escuro */
+.hero-overlay-driver {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, var(--darker-bg) 0%, transparent 40%, rgba(5,5,8,0.7) 100%);
+    z-index: 2;
+}
+
+/* * 3. CONTEÚDO (A Bio que sobe cobrindo o banner)
+ */
+.driver-content {
+    /* RESOLVE O "MUITO COLADO": Adiciona espaço generoso no topo da bio */
+    padding-top: 65vh; /* Inicia o card da bio após 65% da altura da tela */
+    padding-bottom: 0;
+    margin-top: -1px; /* Correção para possíveis gaps na renderização */
+    background: transparent; /* Permite ver o banner por trás */
+}
+
+/* Estilo específico para o card da bio herdado do .section global */
+.bio-driver-card {
+    position: relative;
+    max-width: 800px; /* Largura otimizada para leitura */
+    margin: 0 auto; /* Centraliza o card */
+    background-color: var(--card-bg); /* Fundo herdado */
+    padding: 4rem 3rem !important; /* Espaçamento interno generoso */
+    box-shadow: 0 0 50px var(--shadow-glow) !important; /* Brilho herdado intensificado */
+    animation: slideInUpLinks 1s ease-out backwards; /* Animação herdada */
+    
+}
+
+/* Título e Subtítulo específicos para esta bio */
+.bio-driver-card h2 {
+    color: var(--neon-blue) !important; /* Azul neon cyberpunk */
+    text-shadow: 0 0 20px var(--primary) !important;
+    text-align: left;
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.bio-driver-card h3 {
+    margin-top: 0 !important;
+    margin-bottom: 2rem !important;
+    color: var(--primary) !important;
+    font-size: 1.4rem;
+    text-shadow: 0 0 10px var(--primary) !important;
+    font-weight: 500;
+}
+
+/* Ajustes nas redes sociais dentro do card da bio */
+.driver-social {
+    justify-content: flex-start !important; /* Alinha os ícones à esquerda */
+    margin-top: 3rem !important;
+}
+
+/* * 4. RESPONSIVIDADE (Ajustes para Mobile)
+ */
+@media (max-width: 768px) {
+    /* Banner menor no mobile */
+    .driver-hero {
+        height: 60vh;
+    }
+    
+    .hero-bg {
+        object-position: 90% center; /* Foco extra à direita para não cortar volante */
+    }
+
+    /* Ajuste do início da rolagem da bio no mobile */
+    .driver-content {
+        padding-top: 45vh; /* Bio começa um pouco antes no mobile */
+    }
+
+    .bio-driver-card {
+        padding: 3rem 1.5rem !important; /* Menos padding interno no mobile */
+    }
+
+    .bio-driver-card h2 {
+        font-size: 2.2rem;
+    }
+
+    .bio-driver-card h3 {
+        font-size: 1.1rem;
+    }
+}
