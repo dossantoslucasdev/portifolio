@@ -141,3 +141,20 @@
         font-size: 1.1rem;
     }
 }
+
+.home-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 0 20px var(--shadow-glow);
+    border: 2px solid var(--primary);
+}
